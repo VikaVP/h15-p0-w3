@@ -1,15 +1,15 @@
 function pasanganTerbesar(num) {
     var numString = String(num)
-    var maxNum = 0
-    var minNum = 0
+    var biggest = 0
+    var smallest = 0
 
     for (var i = 0; i < numString.length; i++) {
-        minNum = numString[i] + numString[i + 1]
-        if (minNum > maxNum) {
-            maxNum = minNum
+        smallest = numString[i] + numString[i + 1]
+        if (smallest > biggest) {
+            biggest = smallest
         }
     }
-    return Number(maxNum)
+    return Number(biggest)
 }
 
 // TEST CASES
