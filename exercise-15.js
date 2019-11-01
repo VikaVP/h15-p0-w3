@@ -1,23 +1,19 @@
 function groupAnimals(animals) {
-    var sortAnimals = animals.sort()
-    var resultAnimals = []
-    var isiAnimals = []
-
+    var res = []
     for (var i = 0; i < animals.length; i++) {
-        isiAnimals.push(animals[i])
-        if (i < animals.length - 1) {
-            if (animals[i][0] !== animals[i + 1][0]) {
-                resultAnimals.push(isiAnimals)
-                isiAnimals = []
+        if (animals[i] !== '') {
+            let temp = []
+            temp.push(animals[i])
+            for (var j = i + 1; j < animals.length; j++) {
+                if (temp[0][0] === animals[j][0]) {
+                    temp.push(animals[j])
+                    animals[j] = ''
+                }
             }
-        } else {
-            resultAnimals.push(isiAnimals)
-            isiAnimals = []
+            res.push(temp)
         }
-
     }
-
-    return resultAnimals
+    return res.sort()
 }
 
 // TEST CASES
